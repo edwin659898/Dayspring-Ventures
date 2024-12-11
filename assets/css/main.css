@@ -22,7 +22,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #364d59; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #52565e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #024572; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #87ceeb; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -34,7 +34,7 @@
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #00a1fe; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #87ceeb; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -2866,4 +2866,151 @@ section,
   padding-left: 5px;
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
+}
+
+
+/* about us (from agric) */
+/*--------------------------------------------------------------
+# Services 2 Section
+--------------------------------------------------------------*/
+.services-2 {
+  overflow: visible;
+  margin-bottom: 200px;
+}
+
+.services-2 .section-title {
+  text-align: left;
+}
+
+.services-2 .section-title h2 {
+  color: color-mix(in srgb, var(--contrast-color), transparent 50%);
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.services-2 .section-title p {
+  color: var(--contrast-color);
+}
+
+.services-2 .services-carousel-wrap {
+  position: relative;
+  margin-bottom: -200px;
+}
+
+.services-2 .swiper-wrapper {
+  height: auto;
+}
+
+.services-2 .service-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.services-2 .service-item:before {
+  content: "";
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  transition: 0.3s all ease;
+}
+
+.services-2 .service-item img {
+  transition: 0.5s all ease;
+  transform: scale(1);
+}
+
+.services-2 .service-item .service-item-contents {
+  z-index: 9;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  transition: 0.3s all ease;
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.services-2 .service-item .service-item-contents .service-item-category {
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.services-2 .service-item .service-item-contents .service-item-title {
+  color: var(--contrast-color);
+  margin-bottom: 0;
+}
+
+.services-2 .service-item:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.services-2 .service-item:hover .service-item-contents {
+  transform: translateY(0%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.services-2 .service-item:hover img {
+  transform: scale(1.2);
+}
+
+.services-2 .navigation-prev,
+.services-2 .navigation-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+  width: 46px;
+  height: 46px;
+  background: var(--contrast-color);
+  background-color: none;
+  border: none;
+  transition: 0.3s all ease;
+}
+
+.services-2 .navigation-prev i,
+.services-2 .navigation-next i {
+  font-size: 2rem;
+}
+
+.services-2 .navigation-prev:hover,
+.services-2 .navigation-next:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.services-2 .navigation-prev {
+  left: 10px;
+}
+
+.services-2 .navigation-next {
+  right: 10px;
+}
+
+.services-2 .swiper {
+  padding-bottom: 50px;
+}
+
+.services-2 .swiper-pagination {
+  bottom: 0px;
+}
+
+.services-2 .swiper-pagination .swiper-pagination-bullet {
+  border-radius: 0;
+  width: 20px;
+  height: 4px;
+  background-color: color-mix(in srgb, var(--background-color), transparent 80%) !important;
+  opacity: 1;
+}
+
+.services-2 .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color) !important;
 }
